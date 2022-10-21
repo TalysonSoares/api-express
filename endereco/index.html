@@ -27,7 +27,11 @@
 
         <script>
             function buscar() {
-                fetch('http://localhost:8000/buscar-endereco/'+cep.value)
+                fetch('http://localhost:8000/buscar-endereco/'+cep.value, {
+                    headers: {
+                        'authorization': 'cachorro'
+                    }
+                })
                     .then(res => res.json())
                     .then(json => {
                         logradouro.value = json.logradouro;

@@ -3,7 +3,7 @@ const cors = require('cors');
 
 const port = 8000;
 
-// const token = 'cachorro';
+const token = 'cachorro';
 
 //iniciando uma aplicação express (que vai facilitar a criação de endpoints)
 const app = express();
@@ -39,12 +39,12 @@ app.get('/produtos', (req, res) => {
 
 app.get('/buscar-endereco/:cep', cors(), (req, res) => {
 
-    // if (req.headers.authorization !== token) {
-    //     res.status(401);
-    //     res.send()
+    if (req.headers.authorization !== token) {
+        res.status(401);
+        res.send()
 
-    //     return;
-    // }
+        return;
+    }
     
 
 
