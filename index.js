@@ -1,13 +1,14 @@
 const express = require('express');
+const cors = require('cors');
 
 const port = 8000;
 
-const token = 'cachorro';
+// const token = 'cachorro';
 
 //iniciando uma aplicação express (que vai facilitar a criação de endpoints)
 const app = express();
 app.use(express.json()); //definindo o tipo de resposta como json
-
+app.use(cors());
 
 const enderecos = {
     '60730062':{
@@ -36,7 +37,7 @@ app.get('/produtos', (req, res) => {
     res.send('Lista de produtos');
 })
 
-app.get('/buscar-endereco/:cep', (req, res) => {
+app.get('/buscar-endereco/:cep', cors(), (req, res) => {
 
     // if (req.headers.authorization !== token) {
     //     res.status(401);
