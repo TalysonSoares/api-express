@@ -6,7 +6,9 @@ function severino (hora, funcionalidade) {
     console.log('--------------');
     console.log('--' + hora);
     console.log('--------------');
-    funcionalidade()
+    funcionalidade();
+
+    
 }
 
 severino('08:34', () => {
