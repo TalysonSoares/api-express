@@ -38,12 +38,12 @@ app.get('/produtos', (req, res) => {
 
 app.get('/buscar-endereco/:cep', (req, res) => {
 
-    if (req.headers.authorization !== token) {
-        res.status(401);
-        res.send()
+    // if (req.headers.authorization !== token) {
+    //     res.status(401);
+    //     res.send()
 
-        return;
-    }
+    //     return;
+    // }
     
 
 

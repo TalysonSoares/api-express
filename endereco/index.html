@@ -27,14 +27,15 @@
 
         <script>
             function buscar() {
-                fetch('http://localhost:8000/buscar-endereco/'+cep.value, )
-                    .then(res => res.json)
+                fetch('http://localhost:8000/buscar-endereco/'+cep.value)
+                    .then(res => res.json())
                     .then(json => {
-                        logradouro.value = json.logradouro
-                        bairro.value = json.bairro
-                        cidade.value = json.cidade
-                    })
+                        logradouro.value = json.logradouro;
+                        bairro.value = json.bairro;
+                        cidade.value = json.cidade;
+                    });
             }
+            
         </script>
     </body>
 </html>
